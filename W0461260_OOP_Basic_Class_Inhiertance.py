@@ -8,6 +8,15 @@ import math
 #the self attribute is a reference to the instacne to the class. Every class needs it
 #Length and width are attributes of the class
 #We'll be calculating the area and perameter of the rectangle using a calculate_area and calculate_perimeter 
+
+
+class Shape:
+    def area(self):
+        pass
+    def perimeter(self):
+        pass
+    def volume(self):
+        pass
 class Rectangle:
     def __init__(self,length,width,height):
         self.length = length
@@ -93,6 +102,10 @@ class Circle:
     def diameter_calc(self):
         return (math.pi * pow(self.radius, 2)) *2
     
+#Perimeter calc
+    def perimeter_circ(self):
+        return 2 * math.pi * self.radius
+    
 
 #Now we make a circle object. Giving a value to it's attributes
 circ = Circle(radius = 3, height = 2)
@@ -105,6 +118,10 @@ print(f"Cylinder Height")
 diameter = circ.diameter_calc()
 print(f"Diaeter of Circle: {diameter}")
 
+#Perimeter calc
+circ_perimeter = circ.perimeter_circ()
+print(f"Circle Perimeter: {circ_perimeter}")
+
 #Area of a circle
 area_circ = circ.circle_area_calc()
 print(f"Circle Area: {area_circ}")
@@ -115,4 +132,12 @@ print(f"Sphere Area: {area_sphere}")
 
 #and cyliner volume if it was one
 area_cylinder = circ.cylinder_volume_calc()
-print(f"Cylinder Volume: {area_cylinder}") 
+print(f"Cylinder Volume: {area_cylinder}")
+
+
+#Polymorphism section
+#This allows objects of different classes to be treated as objects of a single, common base class
+#Allowing you to easily resued old code and add new code without breaking the whole program or wasting time
+
+#Polymorphism enables a "sigle interface" to represent diferent typs of objects
+
