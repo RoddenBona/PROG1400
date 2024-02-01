@@ -1,7 +1,8 @@
+import math
+
 #This file is just built off of the previous Basic class file. ust with Inhieritance in it
 
 #Creating a rectangle and define the attributes and methods of it to calculate it's area and perimeter
-
 #define the class. classes are templates for objects
 #n its's deffinition is the __init__ method which initializes it's attributes
 #the self attribute is a reference to the instacne to the class. Every class needs it
@@ -27,15 +28,15 @@ rect = Rectangle(length = 6, width = 4, height= 5)
 
 #access the object's attributes
 #We use dot (.) notation to access singular attribures of an object
-print(f"Length: {rect.length}")
-print(f"Width: {rect.width}")
-print(f"Height: {rect.height}")
+print(f"Rectangle Length: {rect.length}")
+print(f"Rectangle Width: {rect.width}")
+print(f"Rectangle Height: {rect.height}")
 
 #print(type(rect))
 
 #Calling object methods
 area = rect.calculate_area()
-print(f"Area in 2D: {area}")
+print(f"Area: {area}")
 
 perimeter = rect.calculate_perimeter()
 print(f"Perimeter: {perimeter}")
@@ -53,7 +54,9 @@ class Sqaure(Rectangle):
 #Make te instnce of the square class
 #But now we only need tp fill one variable as side_length will just fill in
 #the 3 measuremnt variables that it inhierited with itself.
-cube = Sqaure(side_length=3)
+cube = Sqaure(side_length = 3)
+
+print(f"Cube Side Length; {cube.length} ")
 
 #we can use the same methods we made for the original Rectangle class since we inhierited them
 area_squared = cube.calculate_area()
@@ -64,3 +67,30 @@ print(f"Square Volume: {volume_squared}")
 
 perimeter_squared = cube.calculate_perimeter()
 print(f"Square Perimeter: {perimeter_squared}")
+
+class Circle:
+    def __init__(self,radius,height):
+        self.radius = radius
+        self.height = height
+
+    def circle_area_calc(self):
+        return math.pi * pow(self.radius, 2)
+    
+    def sphere_area_calc(self):
+        return 4 * math.pi * pow(self.radius, 2)
+    
+    def cylinder_volume_calc(self):
+        return math.pi * pow(self.radius, 2) * self.height
+    
+circ = Circle(radius = 3, height = 2)
+print(f"Radius: {circ.radius}")
+print(f"Cylinder Height")
+
+area_circ = circ.circle_area_calc()
+print(f"Circle Area: {area_circ}")
+
+area_sphere = circ.sphere_area_calc()
+print(f"Sphere Area: {area_sphere}")
+
+area_cylinder = circ.cylinder_volume_calc()
+print(f"Cylinder Volume: {area_cylinder}") 
