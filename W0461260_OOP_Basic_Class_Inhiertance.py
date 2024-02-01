@@ -68,6 +68,8 @@ print(f"Square Volume: {volume_squared}")
 perimeter_squared = cube.calculate_perimeter()
 print(f"Square Perimeter: {perimeter_squared}")
 
+
+#Circle class including radius an height attributes
 class Circle:
     def __init__(self,radius,height):
         self.radius = radius
@@ -82,9 +84,15 @@ class Circle:
     def cylinder_volume_calc(self):
         return math.pi * pow(self.radius, 2) * self.height
     
+    def diameter_calc(self):
+        return (math.pi * pow(self.radius, 2)) *2
+    
 circ = Circle(radius = 3, height = 2)
 print(f"Radius: {circ.radius}")
 print(f"Cylinder Height")
+
+diameter = circ.diameter_calc()
+print(f"Diaeter of Circle: {diameter}")
 
 area_circ = circ.circle_area_calc()
 print(f"Circle Area: {area_circ}")
