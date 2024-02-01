@@ -87,7 +87,7 @@ class Circle(Shape):
 
 #We imported the math funtion in order to do math with circle
 #Python does not have pi baked in
-    def circle_area_calc(self):
+    def calculate_area(self):
         return math.pi * self.radius**2
     
 #Area of a sphere
@@ -99,7 +99,7 @@ class Circle(Shape):
         return (4/3) * math.pi * self.radius**3
     
 #Volume of a cylinder
-    def cylinder_volume_calc(self):
+    def calculate_volume(self):
         return math.pi * self.radius**2 * self.height
     
 #Circle Diameter
@@ -107,7 +107,7 @@ class Circle(Shape):
         return (math.pi * self.radius**2) *2
     
 #Perimeter calc
-    def perimeter_circ(self):
+    def calculate_perimeter(self):
         return 2 * math.pi * self.radius
     
 
@@ -123,11 +123,11 @@ diameter = circ.diameter_calc()
 print(f"Diaeter of Circle: {diameter}")
 
 #Perimeter calc
-circ_perimeter = circ.perimeter_circ()
+circ_perimeter = circ.calculate_perimeter()
 print(f"Circle Perimeter: {circ_perimeter}")
 
 #Area of a circle
-area_circ = circ.circle_area_calc()
+area_circ = circ.calculate_area()
 print(f"Circle Area: {area_circ}")
 
 #Sphere area if it was one
@@ -139,7 +139,7 @@ sphere_vol = circ.sphere_volume()
 print(f"Sphere volume: {sphere_vol}")
 
 #and cyliner volume if it was one
-area_cylinder = circ.cylinder_volume_calc()
+area_cylinder = circ.calculate_volume()
 print(f"Cylinder Volume: {area_cylinder}")
 
 #Polymorphism section
@@ -148,3 +148,23 @@ print(f"Cylinder Volume: {area_cylinder}")
 
 #Polymorphism enables a "sigle interface" to represent diferent typs of objects
 
+
+def print_area(shape):
+    print(f"Area of the {shape} is {shape.calculate_area()}")
+
+def print_circumference(shape):
+    print(f"Circumference of {shape} is {shape.calculate_perimeter()}")
+
+def print_volume(shape):
+    print(f"Volme of {shape} is {shape.calculate_volume()}")
+
+#Checking the program in actions shows that despite each area,perim, and volume method is named the same for each shape
+#If the program knows which class the shape belongs in. It'll use the appropriate method for each one.
+
+rect3D = Rectangle(length=5, width=7, height= 9)
+square3D = Sqaure(side_length=5)
+circle3D = Circle(radius=4, height=8)
+
+print_area(rect3D)
+print_circumference(rect3D)
+print_volume(rect3D)
