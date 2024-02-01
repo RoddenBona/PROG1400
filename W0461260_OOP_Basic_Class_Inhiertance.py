@@ -9,15 +9,15 @@ import math
 #Length and width are attributes of the class
 #We'll be calculating the area and perameter of the rectangle using a calculate_area and calculate_perimeter 
 
-
+#Generic shape class for polymorphism
 class Shape:
-    def area(self):
+    def calculate_area(self):
         pass
-    def perimeter(self):
+    def calculate_perimeter(self):
         pass
-    def volume(self):
+    def calculate_volume(self):
         pass
-class Rectangle:
+class Rectangle(Shape):
     def __init__(self,length,width,height):
         self.length = length
         self.width = width
@@ -79,7 +79,7 @@ print(f"Square Perimeter: {perimeter_squared}")
 
 
 #Circle class including radius an height attributes
-class Circle:
+class Circle(Shape):
     def __init__(self,radius,height):
         #Only need 2 attributes to do everything below
         self.radius = radius
@@ -88,19 +88,23 @@ class Circle:
 #We imported the math funtion in order to do math with circle
 #Python does not have pi baked in
     def circle_area_calc(self):
-        return math.pi * pow(self.radius, 2)
+        return math.pi * self.radius**2
     
 #Area of a sphere
     def sphere_area_calc(self):
-        return 4 * math.pi * pow(self.radius, 2)
+        return 4 * math.pi * self.radius**2
+    
+#Sphere Volume 
+    def sphere_volume(self):
+        return (4/3) * math.pi * self.radius**3
     
 #Volume of a cylinder
     def cylinder_volume_calc(self):
-        return math.pi * pow(self.radius, 2) * self.height
+        return math.pi * self.radius**2 * self.height
     
 #Circle Diameter
     def diameter_calc(self):
-        return (math.pi * pow(self.radius, 2)) *2
+        return (math.pi * self.radius**2) *2
     
 #Perimeter calc
     def perimeter_circ(self):
@@ -130,10 +134,13 @@ print(f"Circle Area: {area_circ}")
 area_sphere = circ.sphere_area_calc()
 print(f"Sphere Area: {area_sphere}")
 
+#Volume of a sphere
+sphere_vol = circ.sphere_volume()
+print(f"Sphere volume: {sphere_vol}")
+
 #and cyliner volume if it was one
 area_cylinder = circ.cylinder_volume_calc()
 print(f"Cylinder Volume: {area_cylinder}")
-
 
 #Polymorphism section
 #This allows objects of different classes to be treated as objects of a single, common base class
