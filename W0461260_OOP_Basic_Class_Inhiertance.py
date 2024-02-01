@@ -72,33 +72,47 @@ print(f"Square Perimeter: {perimeter_squared}")
 #Circle class including radius an height attributes
 class Circle:
     def __init__(self,radius,height):
+        #Only need 2 attributes to do everything below
         self.radius = radius
         self.height = height
 
+#We imported the math funtion in order to do math with circle
+#Python does not have pi baked in
     def circle_area_calc(self):
         return math.pi * pow(self.radius, 2)
     
+#Area of a sphere
     def sphere_area_calc(self):
         return 4 * math.pi * pow(self.radius, 2)
     
+#Volume of a cylinder
     def cylinder_volume_calc(self):
         return math.pi * pow(self.radius, 2) * self.height
     
+#Circle Diameter
     def diameter_calc(self):
         return (math.pi * pow(self.radius, 2)) *2
     
+
+#Now we make a circle object. Giving a value to it's attributes
 circ = Circle(radius = 3, height = 2)
 print(f"Radius: {circ.radius}")
 print(f"Cylinder Height")
 
+#Now we call th metods of calculation
+
+#Diameter calc
 diameter = circ.diameter_calc()
 print(f"Diaeter of Circle: {diameter}")
 
+#Area of a circle
 area_circ = circ.circle_area_calc()
 print(f"Circle Area: {area_circ}")
 
+#Sphere area if it was one
 area_sphere = circ.sphere_area_calc()
 print(f"Sphere Area: {area_sphere}")
 
+#and cyliner volume if it was one
 area_cylinder = circ.cylinder_volume_calc()
 print(f"Cylinder Volume: {area_cylinder}") 
