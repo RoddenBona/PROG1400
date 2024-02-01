@@ -43,7 +43,6 @@ print(f"Perimeter: {perimeter}")
 volume = rect.calculate_volume()
 print(f"Volume: {volume}")
 
-
 #Create a new class called Square which will inhierot te attributes of Retangle
 class Sqaure(Rectangle):
     def __init__(self, side_length):
