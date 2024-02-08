@@ -11,12 +11,16 @@ import math
 
 #Generic shape class for polymorphism
 class Shape:
+    def name_of_class(self):
+        return self.__class__.__name__
     def calculate_area(self):
         pass
     def calculate_perimeter(self):
         pass
     def calculate_volume(self):
         pass
+    def __str__(self):
+        return self.__class__.__name__
 class Rectangle(Shape):
     def __init__(self,length,width,height):
         self.length = length
@@ -54,7 +58,7 @@ volume = rect.calculate_volume()
 print(f"Volume: {volume}")
 
 #Create a new class called Square which will inhierot te attributes of Retangle
-class Sqaure(Rectangle):
+class Square(Rectangle):
     def __init__(self, side_length):
         #Call the constructor of the base class (Rectangle)
         #But instead we are inserting our own extra thing. Where we make the lengh,width, and heigth equal to the one side length variable.
@@ -63,7 +67,7 @@ class Sqaure(Rectangle):
 #Make te instnce of the square class
 #But now we only need tp fill one variable as side_length will just fill in
 #the 3 measuremnt variables that it inhierited with itself.
-cube = Sqaure(side_length = 3)
+cube = Square(side_length = 3)
 
 print(f"Cube Side Length; {cube.length} ")
 
@@ -162,7 +166,7 @@ def print_volume(shape):
 #If the program knows which class the shape belongs in. It'll use the appropriate method for each one.
 
 rect3D = Rectangle(length=5, width=7, height= 9)
-square3D = Sqaure(side_length=5)
+square3D = Square(side_length=5)
 circle3D = Circle(radius=4, height=8)
 
 print_area(rect3D)
