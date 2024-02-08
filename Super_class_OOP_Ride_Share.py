@@ -34,7 +34,10 @@ class Rider(User):
         print(f"{self.first_name} {self.last_name} will pick you up along the {route} route")
 
 class Route:
-    pass
+    def __init__(self, stops):
+        self.stops = stops
+    def __str__(self)
+
 
 driver1 = Driver("Rodden", "Bona","36 Summit Dr" ,"902-300-5767","roddenbona2003@gmail.com", "Kia", "Soul", "Yellow", "SUV")
 
