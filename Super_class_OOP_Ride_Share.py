@@ -32,17 +32,14 @@ class Rider(User):
         
     def make_drive(self, route):
         print(f"{self.first_name} {self.last_name} will pick you up along the {route} route")
-
 class Route:
     def __init__(self, stops):
         self.stops = stops
-    def __str__(self)
-
+    def __str__(self):
+        pass
 
 driver1 = Driver("Rodden", "Bona","36 Summit Dr" ,"902-300-5767","roddenbona2003@gmail.com", "Kia", "Soul", "Yellow", "SUV")
-
 rider1 = Rider("Will", "Williams","10 Existance St" ,"902-9029-029", "W.Williams@hotmail.com")
-
 route = ["Antigonish","Tim Hortons", "Strait Area Campus"]
 
 driver1.make_drive(route)
