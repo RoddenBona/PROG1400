@@ -44,7 +44,7 @@ print(car2.is_running)
 
 
 
-
+"""
 #Inheritance:
 #Parent class
 class Animal:
@@ -71,7 +71,4 @@ print(cat.speak())
 
 print(dog.habitat)
 print(cat.habitat)
-
-
-
-#Polymorphism
+""" 
