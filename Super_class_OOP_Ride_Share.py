@@ -26,7 +26,7 @@ class Driver(User):
         self.v_type = v_type
 
     def details(self):
-        return f"{super().details()} Vehicle: {self.v_color} {self.v_make} {self.v_model} {self.v_type}"
+        return f"Driver {super().details()} Vehicle: {self.v_color} {self.v_make} {self.v_model} {self.v_type}"
 class Rider(User):
     def __init__(self, first_name, last_name, phone, email):
         super().__init__(first_name, last_name, phone, email)
@@ -62,6 +62,7 @@ def main():
 
     # Iterate over entities and print their details
     for i in travel1:
+        print("\n")
         print(i.details())
 
 # The __name__ variable is a special variable that holds the name of the current
