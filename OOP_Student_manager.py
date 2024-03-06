@@ -1,5 +1,5 @@
 
-
+students_list = []
 class Student:
     def __init__(self, student_id, name, age, grade):
         self.student_id = 1
@@ -38,11 +38,8 @@ def add_student():
     new_grade = input("What is the student's current grade? ")
     if new_grade.isdigit():
         new_grade = int(new_grade)
-    new_id = Student.id + 1
+    new_id = len(students_list) + 1
 
-
-student1 = Student()
-Name = input("Enter new student name: ")
-age = input("Enter new student age: ")
-grade = input("Enter new student grade: ")
-
+    def display_all_students():
+        for i in students_list:
+            pass
