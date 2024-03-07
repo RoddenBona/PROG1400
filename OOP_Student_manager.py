@@ -65,9 +65,7 @@ class StudentManagementSystem(Student):
 
     def display_all_students(self):
         for i in students_list:
-            self.display_info()
-
-            #print(f"Student ID: {self.student_id} Name: {self.name} Age: {self.age} {self.grade}")
+            print(f"Student ID: {self.student_id} Name: {self.name} Age: {self.age} {self.grade}")
 
     def student_search(self):
         search = input("Enter Student ID:")
@@ -79,3 +77,8 @@ class StudentManagementSystem(Student):
 example = Student(1, "Roland", 21, 85)
 
 students_list.append(example)
+
+if __name__ == "__main__":
+    main = StudentManagementSystem
+    main.main_menu()
+    

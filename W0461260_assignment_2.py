@@ -137,4 +137,3 @@ def journey(self):
 journey(mycar)
 journey(myplane)
 journey(mybike)
-
