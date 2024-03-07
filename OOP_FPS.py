@@ -31,7 +31,7 @@ class Player:
 
     def attack(self):
         if self.weapon:
-            self.weapon.attack()
+            self.weapon.shoot(Weapon)
         else:
             print(f"{self.name} has no weapon!")
 
@@ -42,10 +42,10 @@ class FPS:
         self.player2 = player2
     def play_round(self):
         print("Open the game!")
-        self.player1.attack()
+        self.player1.shoot(Weapon)
         self.player2.take_damage(self.player1.weapon.damage)
 
-        self.player2.attack()
+        self.player2.shoot(Weapon)
         self.player1.take_damage(self.player2.weapon.damage)
 
 if __name__ == "__main__":

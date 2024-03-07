@@ -53,14 +53,10 @@ class StudentManagementSystem:
 
     def add_student():
         id = len(students_list) + 1
-        name = input("Enter new student name: ")
-        age = input("Enter new students age: ")
-        if age.isdigit():
-            age = str(age)
-        grade = input("Enter new student grade: ")
-        if grade.isdigit():
-            grade = int(grade)
-        new_student = Student(id, name, age, grade)
+        new_name = input("Enter new student name: ")
+        new_age = input("Enter new students age: ")
+        new_grade = input("Enter new student grade: ")
+        new_student = Student(id, new_name, new_age, new_grade)
         students_list.append(new_student)
         print(f"{new_student.student_id} {new_student.name} {new_student.age} {new_student.grade}")
 
@@ -68,7 +64,7 @@ class StudentManagementSystem:
         for i in students_list:
             print(f"{i.age()}")
 
-example = Student(len(students_list), "Roland", 21, 85)
+example = Student(len(students_list), "Roland", "21", "85")
 
 students_list.append(example)
 
