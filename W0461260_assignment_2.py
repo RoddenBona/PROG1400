@@ -60,38 +60,38 @@ class Animal:
         pass
 
 class Dog(Animal):
-    def __init__(self,name):
-        self.name = name
+    def __init__(self):
+        super().__init__()
     def speak(self):
-        return f"The {self.__class__.__name__} goes woof!"
+        return f"woof!"
     def move(self):
-        return f"The {self.__class__.__name__} runs away"
+        return f"Dog runs away"
 
 class Cat(Animal):
-    def __init__(self,name):
-        self.name = name
+    def __init__(self,):
+        super().__init__()
     def speak(self):
-        return f"The {self.__class__.__name__} goes meow!"
+        return f"meow!"
     def move(self):
-        return f"The {self.__class__.__name__} scitters away"
+        return f"Cat scitters away"
 
 class Bird(Animal):
-    def __init__(self,name):
-        self.name = name
+    def __init__(self):
+        super().__init__()
     def speak(self):
-        return f"The {self.__class__.__name__} goes tweet tweet!"
+        return f"tweet tweet!"
     def move(self):
-        return f"The {self.__class__.__name__} flys away"
+        return f"Bird flys away"
     
-mybird = Bird("placeholder")
-mydog = Dog(("placeholder"))
-mycat = Cat("placeholder")
+mybird = Bird
+mydog = Dog
+mycat = Cat
 
 def speaking(Animal):
-    print(Animal.speak())
+    print(Animal.speak(Animal))
 
 def moving(Animal):
-    print(Animal.move())
+    print(Animal.move(Animal))
 
 speaking(mydog)
 speaking(mycat)
@@ -131,8 +131,8 @@ mycar = Car
 myplane = Plane
 mybike = Bike
 
-def journey(self):
-    print(Vehicle.traveling())
+def journey(Vehicle):
+    print(Vehicle.traveling(Vehicle))
 
 journey(mycar)
 journey(myplane)
