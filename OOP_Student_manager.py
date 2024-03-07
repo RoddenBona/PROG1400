@@ -1,10 +1,9 @@
-students_list = []
 class Student:
     def __init__(self, student_id, name, age, grade):
-        self.student_id = len(students_list)
-        self.name = name
-        self.age = age
-        self.grade = grade
+        self.student_id = 0
+        self.name = ""
+        self.age = 0
+        self.grade = 0
     
     def display_info(self,student_id, name, age, grade):
         return f"ID:{self.student_id} Name:{self.name} Age:{self.age} Grade:{self.grade}"
@@ -23,51 +22,19 @@ class GradeSudent(Student):
         return f"Name: {self.name} Thesis: {self.thesis_topic}"
 
 class StudentManagementSystem:
-    def __init__(self):
+    def __init__(self, student_list):
+        self.student_list = []
+    
+    def add_student(self, new_student):
+        self.student.append(new_student)
+        print(self.student_list)
+
+    def display_all(self):
+        for i in self.student:
+            print(self.student[i])
+
+    def search_student_display(self):
         pass
 
-    def main_menu():
-        while True:
-            option = input("""Main menu
-                        Please Select an option below
-                        
-                        1) Add student
-                        2) All student information
-                        3) Search for a student
-                        4)Grade student
-                        Enter Here: """)
-            if option.isdigit():
-                option = int(option)
-                if option == 1:
-                    StudentManagementSystem.add_student()
-                else:
-                    if option == 2:
-                        StudentManagementSystem.display_all_students(Student)
-                    else:
-                        if option == 3:
-                            StudentManagementSystem.student_search()
-                        else:
-                            print("Option not in list")
-            else:
-                print("error invalid input")
-
-    def add_student():
-        id = len(students_list) + 1
-        new_name = input("Enter new student name: ")
-        new_age = input("Enter new students age: ")
-        new_grade = input("Enter new student grade: ")
-        new_student = Student(id, new_name, new_age, new_grade)
-        students_list.append(new_student)
-        print(f"{new_student.student_id} {new_student.name} {new_student.age} {new_student.grade}")
-
-    def display_all_students(Student):
-        for i in students_list:
-            print(f"{i.age()}")
-
-example = Student(len(students_list), "Roland", "21", "85")
-
-students_list.append(example)
-
-if __name__ == "__main__":
-    main = StudentManagementSystem
-    main.main_menu()
+    def search_student_other():
+        pass
