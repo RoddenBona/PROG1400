@@ -11,6 +11,6 @@ print(f"Subtraction: {simple_calc.subtract(x,y)}")
 print(f"Multiply: {simple_calc.multiply(x,y)}")
 print(f"Divide: {simple_calc.divide(x,y)}")
 
-calc = simple_calc.AdvancedCalc.exponentials(2,10)
+calc = simple_calc.AdvancedCalc()
 
-print(calc)
+print("Expontentiation", calc.exponentials(x,y))
