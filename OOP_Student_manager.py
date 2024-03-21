@@ -22,19 +22,26 @@ class GradeSudent(Student):
         return f"Name: {self.name} Thesis: {self.thesis_topic}"
 
 class StudentManagementSystem:
-    def __init__(self, student_list):
-        self.student_list = []
-    
+    student_list = []
+
+    def __init__(self):
+        pass
+
     def add_student(self, new_student):
-        self.student.append(new_student)
-        print(self.student_list)
+        pass
 
     def display_all(self):
-        for i in self.student:
-            print(self.student[i])
+        for i in self.student_list:
+            print(self.student_list[i])
 
     def search_student_display(self):
-        pass
+        search = input("Search for student here: ")
 
     def search_student_other():
-        pass
+        search_other = input("Search for student here: s")
+
+
+
+ingo = Student(1,"Ingo",20,80)
+
+
