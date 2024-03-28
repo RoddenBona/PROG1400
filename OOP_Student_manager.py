@@ -1,3 +1,12 @@
+"""
+Author: Rodden Bona
+Student ID: W0461260
+Course: PROG1400
+Repository: https://github.com/RoddenBona/PROG1400
+Project: Student Management System
+Version 1
+Last edited: March 28 2024
+"""
 class Student:
     def __init__(self, student_id, name, age, grade):
         self.student_id = student_id

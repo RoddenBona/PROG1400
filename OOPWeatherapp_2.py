@@ -1,23 +1,23 @@
-import requests
-import json
+import OOPWeatherap_1
 
-class OpenMapAPI:
-    def __init__(self,api_key) -> None:
-        self.api_key = api_key
-        self.base_url = "https://api.openweathermap.org/data/2.5/weather"
+#first we gotta deal with our api key
+api_key = "82005d27a116c2880c8f0fcb866998a0"
+open_map = OOPWeatherap_1.OpenMapAPI(api_key)
+kelvin = 273.15
+city_name = input("Enter city name: ")
 
-#we don't define base_url in the init because it's not supposed to eer be changeable
-        
-    def get_weather_by_city(self, city_name):
-        #https://api.openweathermap.org/data/2.5/weather?q={city%20name}&appid={API%20key}
-        url = f"{self.base_url}?q={city_name}&appid={self.api_key}"
-        response = requests.get(url)
-        #error checking
-        if response.status_code == 200:
-            data = response.json()
-            return data
-        else:
-            return None
-        
-if __name__ == "__main__":
-    pass
+try:
+    city_weather = open_map.get_weather_by_city(city_name)
+except NameError:
+    print("""Check city name, api key, internet connection, or api service
+          One of them may be missing or down at the moment""")
+
+
+
+if city_weather["cod"] == 200:
+    print(f"weather in", city_name)
+    print("Description: ", city_weather["weather"][0]["description"])
+    print("temperature", round(city_weather["main"]["temp"] - kelvin), "°C")
+else:
+    print("""Check city name, api key, internet connection, or api service
+          One of them may be missing or down at the moment""")
