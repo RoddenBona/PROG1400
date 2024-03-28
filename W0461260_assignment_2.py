@@ -1,28 +1,30 @@
 import math
 
 #PART 1 ABSTACTION
-class Shape:
+class Shape: #First I define the basic shape class, nothing needs to be in it
     def __init__(self,):
         return self.__class__.__name__
     def area(self):
         pass
 
-class Square(Shape):
+class Square(Shape): #Then we can make a subclass of the main shape class with it's own unique traits and instances
     def __init__(self,length,width):
         self.length = length
         self.width = width
-    def area(self):
+    def area(self): #This will overide the main classes area functiom with this one.
         return self.width*self.width
     
-class Circle(Shape):
+class Circle(Shape): #Doing the same here. Using a different shape to differentiae the two
     def __init__(self, radius):
         self.radius = radius
-    def area(self):
+    def area(self): #This will also overide the main area function
         return math.pi * self.radius**2
     
+#Now we define 2 objects, one with each subclass o shape
 mysquare = Square(12, 11)
 mycircle = Circle(5)
 
+#This function will simply print the area of th specific hape, using their respective area function
 def print_area(Shape):
     print(f"Area = {Shape.area()}")
 
@@ -30,21 +32,25 @@ print_area(mysquare)
 print_area(mycircle)
 
 #PART 2 ENCAPSULATION
-class Student:
+
+class Student: #First I define the main class.
     def __init__(self, name, age, grade):
         self.name = name
         self.age = age
         self.grade = grade
-    def student_details(self):
+    def student_details(self): #This function will return the following string.
         return f"Name: {self.name} Age: {self.age} Grade: {self.grade}"
     
+#Now we make a new object of the Student class, filling out it's perameters
 mark = Student("Mark",20,75)
 
+#Similar printing function to the encapsulation one
 def show_details(self):
     print(Student.student_details(self))
 
 show_details(mark)
 
+#But we're oning to change and update the perameters
 mark.age = 21
 mark.grade = 90
 

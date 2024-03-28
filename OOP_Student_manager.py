@@ -1,9 +1,9 @@
 class Student:
     def __init__(self, student_id, name, age, grade):
-        self.student_id = 0
-        self.name = ""
-        self.age = 0
-        self.grade = 0
+        self.student_id = student_id
+        self.name = name
+        self.age = age
+        self.grade = grade
     
     def display_info(self,student_id, name, age, grade):
         return f"ID:{self.student_id} Name:{self.name} Age:{self.age} Grade:{self.grade}"
@@ -22,26 +22,28 @@ class GradeSudent(Student):
         return f"Name: {self.name} Thesis: {self.thesis_topic}"
 
 class StudentManagementSystem:
-    student_list = []
+    def add_student():
+        new_id = len(list) + 1
+        new_name = input()
+        new_age = input()
+        new_grade = input()
+        mylist.append(Student(new_id,new_name,new_age,new_grade))
 
-    def __init__(self):
-        pass
-
-    def add_student(self, new_student):
-        pass
-
-    def display_all(self):
-        for i in self.student_list:
-            print(self.student_list[i])
-
-    def search_student_display(self):
-        search = input("Search for student here: ")
-
-    def search_student_other():
-        search_other = input("Search for student here: s")
+    def search_student():
+        search = input()
+        if search in mylist:
+            print("success")
+        else:
+            print("fail")
 
 
 
-ingo = Student(1,"Ingo",20,80)
 
+mylist = []
 
+mylist.append(Student(1,"Mark",20,80))
+mylist.append(Student(2,"John",25,90))
+
+print(mylist)
+
+StudentManagementSystem.search_student()

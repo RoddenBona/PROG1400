@@ -14,7 +14,7 @@ except NameError:
 
 
 
-if city_weather:
+if city_weather["cod"] == 200:
     print(f"weather in", city_name)
     print("Description: ", city_weather["weather"][0]["description"])
     print("temperature", round(kelvin - city_weather["main"]["temp"]), "°C")
