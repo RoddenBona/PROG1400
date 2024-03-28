@@ -1,8 +1,8 @@
-import OoopWeather
+import OOpWeatherapp_2
 
 #first we gotta deal with our api key
 api_key = "82005d27a116c2880c8f0fcb866998a0"
-open_map = OoopWeather.OpenMapAPI(api_key)
+open_map = OOpWeatherapp_2.OpenMapAPI(api_key)
 kelvin = 273.15
 city_name = input("Enter city name: ")
 

@@ -23,7 +23,7 @@ class GradeSudent(Student):
 
 class StudentManagementSystem:
     def add_student():
-        new_id = len(list) + 1
+        new_id = len(mylist) + 1
         new_name = input()
         new_age = input()
         new_grade = input()
@@ -46,4 +46,6 @@ mylist.append(Student(2,"John",25,90))
 
 print(mylist)
 
-StudentManagementSystem.search_student()
+StudentManagementSystem.add_student()
+
+print(mylist)
