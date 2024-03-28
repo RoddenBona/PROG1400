@@ -17,7 +17,7 @@ except NameError:
 if city_weather["cod"] == 200:
     print(f"weather in", city_name)
     print("Description: ", city_weather["weather"][0]["description"])
-    print("temperature", round(kelvin - city_weather["main"]["temp"]), "°C")
+    print("temperature", round(city_weather["main"]["temp"] - kelvin), "°C")
 else:
     print("""Check city name, api key, internet connection, or api service
           One of them may be missing or down at the moment""")
