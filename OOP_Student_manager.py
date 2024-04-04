@@ -4,7 +4,7 @@ Student ID: W0461260
 Course: PROG1400
 Repository: https://github.com/RoddenBona/PROG1400
 Project: Student Management System
-Version 1
+Version 1.0
 Last edited: March 28 2024
 """
 
@@ -25,8 +25,8 @@ class Student:
     def update_info(self):
         self.name = input("Enter new name: ")
         self.age = input("Enter new age: ")
-        self.grade = input("Enter new grade")
-        print("Information has been updated")
+        self.grade = input("Enter new grade: ")
+        print("Information has been updated: ")
 
 #This subclass will contain the thesis of the said students
 class GradeStudent(Student):
@@ -42,39 +42,56 @@ class StudentManagementSystem:
     #The add_student function does exactly that. Asking for user input to define the new students attributes
     def add_student():
         #The id is the only atrribute that doesn't take input. instead becomeing the number of items in the list + 1
-        #This is somewhat flawed if we delete
+        #This is somewhat flawed if we delete a student and the ID's no longer match the index
         new_id = len(mylist) + 1
-        new_name = input("Enter new student's name")
-        new_age = input("Enter new student's age")
-        new_grade = input("Enter new student's grade")
-        new_thesis = input("Enter new student's thesis topic")
+        new_name = input("Enter new student's name: ")
+        new_age = input("Enter new student's age: ")
+        new_grade = input("Enter new student's grade: ")
+        new_thesis = input("Enter new student's thesis topic: ")
+        #After all variables are given by the user. Append the list with a new student using the given variables
         mylist.append(GradeStudent(new_id,new_name,new_age,new_grade,new_thesis))
+        print("New record has been added")
 
+#This the student search program. It searches for the student records via their ID
     def search_student():
-        ID = input()
+        #User inputs the ID of the student they wish to see the record of
+        ID = input("Enter student ID to search: ")
+        #now because the list index starts at 0. We minus 1 from the inputed number so the ID and input match up
+        #This is why deleting a record is problematic, as the code currently does not reassign the IDs to match input again
         if ID.isdigit():
             ID = int(ID) -1
             try:
+                #If input is a valid index number. Try to display the student information using the GradeStudent display function
                 print(GradeStudent.display_info(mylist[ID]))
             except:
+                #If not. Print an error message
                 print("Error: Not Found")
         else:
+            #This error is for if the input was not a digit number
             print("Error Invalid")
 
+#The simplest function of the program. Simply just iterate throught the list of students and print the info
     def see_all():
         for i in mylist:
             print(GradeStudent.display_info(i))
 
+#This was not required of the progam for this assignment. But I did make a delete record function.
+#As I said before the program does not reassign IDs after removal. So looking up ID's after one was removed may be a pain
     def delete_student():
-            ID = input()
+            ID = input("Eter student ID to search: ")
             if ID.isdigit():
                 ID = int(ID) -1
+                #The program will ask for conformation to delete the record from the system.
                 deletion = input("""Are you sure you wish to delete this student record?
                                  1)Yes
-                                 2)No""")
+                                 2)No
+                                 Enter option here: """)
                 if deletion == 1:
+                    #If answered yes. remove the index of the given ID from the list
                     mylist.remove(mylist[ID])
+                    print("record has been removed")
                 else:
+                    #Otherwsie leave back t menu
                     if deletion == 2:
                         print("Deletion process aborted")
                     else:
@@ -82,23 +99,28 @@ class StudentManagementSystem:
             else:
                 print("Error: Invalid")
 
+#This is the main menu function. Giving easy access to all the above functions
     def main_menu():
         while True:
-            option = input("""Welcome to the NSCC Student Managent System
+            option = input("""Welcome to the NSCC Student Managent System V1
                            Please select one of the options provided below
                            1)Add new student entry
                            2)Update Student information
                            3)Search for student record
                            4)See all Student records
                            5)Delete Student entry
-                           6)Exit program""")
+                           6)Exit program
+                           Enter option here: """)
             if option.isdigit():
                 option = int(option)
                 if option == 1:
                     StudentManagementSystem.add_student()
                 else:
+                    #The update info function is the only function that needs to have this extra input
+                    #Due to the fcat that the update_info function is part of the Student class and not part of the
+                    #management system. Nor was I made with a search input in the student class.
                     if option == 2:
-                        search = input("Enter ID of the student record you wish to update")
+                        search = input("Enter ID of the student record you wish to update: ")
                         if search.isdigit():
                             search = int(search) -1
                             try:
@@ -116,17 +138,19 @@ class StudentManagementSystem:
                                     StudentManagementSystem.delete_student()
                                 else:
                                     if option == 6:
-                                        print("Thank you for using the NSCC Student Management System. Goodbye")
+                                        print("Thank you for using the NSCC Student Management System V1. Goodbye")
                                         break
                                     else:
                                         print("Error: Invalid")
             else:
                 print("Error: Invalid")
 
-
+#This the list variable we'll be using to store all the GradeStudent class objects
 mylist = []
 
+#These are 2 example entries put in to test the program
 mylist.append(GradeStudent(1,"Mark",20,80,"Biology"))
 mylist.append(GradeStudent(2,"John",25,90,"Astrology"))
 
+#This will start the main menu upon booting up the program
 StudentManagementSystem.main_menu()
