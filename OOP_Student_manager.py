@@ -10,36 +10,45 @@ Last edited: March 28 2024
 
 #This will be the master Student class that will include their name, age, ID, and grade
 class Student:
-    #
+    #Initializing  the attributes of the Student class
     def __init__(self, student_id, name, age, grade):
         self.student_id = student_id
         self.name = name
         self.age = age
         self.grade = grade
     
-    def display_info(self,student_id, name, age, grade):
-        return f"ID:{self.student_id} Name:{self.name} Age:{self.age} Grade:{self.grade}"
+    #display info will be overided by another display_info function later down
+    def display_info(self):
+        pass
     
+    #This is a function made for updating the student grades upon being their ID being searched
     def update_info(self):
         self.name = input("Enter new name: ")
         self.age = input("Enter new age: ")
         self.grade = input("Enter new grade")
         print("Information has been updated")
 
+#This subclass will contain the thesis of the said students
 class GradeStudent(Student):
+    #So GradeStudent will inhierit the main attributes of main Student class. but we'll add on the thesis topic attribute
     def __init__(self, student_id, name, age, grade, thesis_topic):
         super().__init__(student_id, name, age, grade)
         self.thesis_topic = thesis_topic
     def display_info(self):
         return f"ID: {self.student_id} Name: {self.name} Age: {self.age} Grade: {self.grade} Thesis: {self.thesis_topic}"
 
+#This class is the main section containing most of the functions of the program. including a main menu for navigation
 class StudentManagementSystem:
+    #The add_student function does exactly that. Asking for user input to define the new students attributes
     def add_student():
+        #The id is the only atrribute that doesn't take input. instead becomeing the number of items in the list + 1
+        #This is somewhat flawed if we delete
         new_id = len(mylist) + 1
-        new_name = input()
-        new_age = input()
-        new_grade = input()
-        mylist.append(GradeStudent(new_id,new_name,new_age,new_grade))
+        new_name = input("Enter new student's name")
+        new_age = input("Enter new student's age")
+        new_grade = input("Enter new student's grade")
+        new_thesis = input("Enter new student's thesis topic")
+        mylist.append(GradeStudent(new_id,new_name,new_age,new_grade,new_thesis))
 
     def search_student():
         ID = input()
