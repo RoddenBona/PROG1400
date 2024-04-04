@@ -45,7 +45,9 @@ class StudentManagementSystem:
         else:
             print("fail")
 
-
+    def see_all():
+        for i in mylist:
+            print(i)
 
 
 mylist = []
