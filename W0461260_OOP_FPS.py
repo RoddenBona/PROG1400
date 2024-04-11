@@ -31,9 +31,10 @@ class Player:
 
     def attack(self):
         if self.weapon:
-            self.weapon.shoot(Weapon)
+            self.weapon.shoot()
         else:
             print(f"{self.name} has no weapon!")
+        
 
 #define the game
 class FPS:
@@ -42,11 +43,11 @@ class FPS:
         self.player2 = player2
     def play_round(self):
         print("Open the game!")
-        self.player1.shoot(Weapon)
-        self.player2.take_damage(self.player1.weapon.damage)
+        self.player1.attack()
+        self.player2.take_damage(shotgun.damage)
 
-        self.player2.shoot(Weapon)
-        self.player1.take_damage(self.player2.weapon.damage)
+        self.player2.attack()
+        self.player1.take_damage(assault_rifle.damage)
 
 if __name__ == "__main__":
 #Make weapons
@@ -62,3 +63,13 @@ if __name__ == "__main__":
 
     game = FPS(player1, player2)
     game.play_round()
+
+
+
+"""
+Notes
+
+I got it work after 2 months.
+The reaon why the prgram didn't work was because there were too many variables giiven to the attack and take_damage functions
+As well as the attack function itself using the weapons.shoot function that also had an extra variable given that wasn't needed
+"""
