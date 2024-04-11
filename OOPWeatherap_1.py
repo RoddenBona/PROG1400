@@ -1,5 +1,6 @@
 import requests
 import json
+#We neeed to import the modules needed to make requests and access json files from the internet
 
 class OpenMapAPI:
     def __init__(self,api_key,message) -> None:

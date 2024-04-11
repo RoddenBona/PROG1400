@@ -1,6 +1,8 @@
 import OOPWeatherap_1
+#importing the first program to fucntion inside of this one
 
-#first we gotta deal with our api key
+
+#Input our api key
 api_key = "82005d27a116c2880c8f0fcb866998a0"
 open_map = OOPWeatherap_1.OpenMapAPI(api_key)
 kelvin = 273.15
@@ -11,7 +13,6 @@ try:
 except NameError:
     print("""Check city name, api key, internet connection, or api service
           One of them may be missing or down at the moment""")
-
 
 
 if city_weather["cod"] == 200:

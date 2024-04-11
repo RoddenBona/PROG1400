@@ -1,3 +1,13 @@
+"""
+Author: Rodden Bona
+Student ID: W0461260
+Course: PROG1400
+Repository: https://github.com/RoddenBona/PROG1400
+Project: Object Oriented programming Python Assignment 2
+Version 1.0
+Last edited: March 28 2024
+"""
+
 import math
 
 #PART 1 ABSTACTION
@@ -57,6 +67,7 @@ mark.grade = 90
 show_details(mark)
 
 #PART 3 INHERITANCE
+
 class Animal:
     def __init__(self):
         return self.__class__.__name__
