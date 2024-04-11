@@ -8,6 +8,8 @@ Version 1.0
 Last Edited: April 11 2024 2024
 """
 
+#Aded definitions of each of the 4 foundations of OOP
+
 import math
 
 #PART 1 ABSTACTION
