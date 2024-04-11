@@ -3,7 +3,7 @@ Author: Rodden Bona
 Student ID: W0461260
 Course: PROG1400
 Repository: https://github.com/RoddenBona/PROG1400
-Project: Object Oriented programming Python Assignment 2
+Project: OOP Concepts Practice
 Version 1.0
 Last Edited: April 11 2024 2024
 """
@@ -132,34 +132,41 @@ moving(mybird)
 
 #PART 4 POLYMORPHISM
 
+#Main vehicle class
 class Vehicle:
     def __init__(self):
         return self.__class__.__name__
     def traveling(self):
         pass
 
+#Car subclass
 class Car(Vehicle):
     def __init__(self):
         super().__init__()
     def travelingl(self):
         return f"The car starts up an drives 30km"
 
+#plane subclass
 class Plane(Vehicle):
     def __init__(self):
         super().__init__()
     def traveling(self):
         return f"The plane fires up and flies 3000km"
 
+#bike subclass
 class Bike(Vehicle):
     def __init__(self):
         super().__init__()
     def traveling(self):
         return f"The bike is out and cycles 3km"
-    
+
+#Just like before. We now create 3 objects, each of a dfferent class
 mycar = Car
 myplane = Plane
 mybike = Bike
 
+
+#all three will use the travel function
 def travel(Vehicle):
     print(Vehicle.traveling(Vehicle))
 
