@@ -1,3 +1,12 @@
+"""
+Author: Rodden Bona
+Student ID: W0461260
+Course: PROG1400
+Repository: https://github.com/RoddenBona/PROG1400
+Project: Json Weather App Part 1
+Version 1.0
+Last edited: March 28 2024
+"""
 import requests
 import json
 #We neeed to import the modules needed to make requests and access json files from the internet

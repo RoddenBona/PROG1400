@@ -1,3 +1,13 @@
+"""
+Author: Rodden Bona
+Student ID: W0461260
+Course: PROG1400
+Repository: https://github.com/RoddenBona/PROG1400
+Project: JSON Weather App Part 2
+Version 1.0
+Last edited: April 11 2024
+"""
+
 import OOPWeatherap_1
 #importing the first program to fucntion inside of this one
 

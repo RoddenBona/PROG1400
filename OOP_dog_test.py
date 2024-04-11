@@ -13,9 +13,10 @@ class Dog:
         def speak(self, sound):
             return f"{self.name} says {sound}"
 
-miles = Dog("Miles", 4)
-buddy = Dog("Buddy", 9)
-
+miles = Dog("Miles", 4,"German Sheppard")
+buddy = Dog("Buddy", 9,"Golden Labrador")
+jack = Dog("Jack", 3, "Bulldog")
+jim = Dog("Jim", 5, "Bulldog")
 class Parent:
     hair_color = "brown"
     speaks = ["English"]
@@ -29,3 +30,6 @@ class Child(Parent):
 
 if isinstance(miles, Dog) == True:
     print("True")
+
+buddy.speak("woof")
+

@@ -5,7 +5,7 @@ Course: PROG1400
 Repository: https://github.com/RoddenBona/PROG1400
 Project: Student Management System
 Version 1.0
-Last edited: March 28 2024
+Last edited: April 4 2024
 """
 
 #This will be the master Student class that will include their name, age, ID, and grade
@@ -76,7 +76,7 @@ class StudentManagementSystem:
             print(GradeStudent.display_info(i))
 
 #This was not required of the progam for this assignment. But I did make a delete record function.
-#As I said before the program does not reassign IDs after removal. So looking up ID's after one was removed may be a pain
+#As I said before the program does not reassign IDs after removal. So looking up ID's after one was removed will be a pain
     def delete_student():
             ID = input("Eter student ID to search: ")
             if ID.isdigit():

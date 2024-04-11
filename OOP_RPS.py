@@ -8,6 +8,7 @@ Respository: https://github.com/RoddenBona/PROG1700
 Project: Object Oriented Programming: Rock Paper Scissors
 Programming Language: Python 3
 Version: 1
+Last Edited April 11 2024
 """
 
 options_list = ["rock", "paper", "scissors"]
@@ -28,6 +29,7 @@ class HumanPlayer(Player):
             move = input(f"{self.name}. Enter your move 1(Rock Paper Scissors): ").lower()
         return move
     
+    #make a computer player class
 class CPU(Player):
     def choose_move(self):
         return random.choice(options_list)

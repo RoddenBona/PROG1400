@@ -5,7 +5,7 @@ Course: PROG1400
 Repository: https://github.com/RoddenBona/PROG1400
 Project: Object Oriented programming Python Assignment 2
 Version 1.0
-Last edited: March 28 2024
+Last Edited: April 11 2024 2024
 """
 
 import math
@@ -67,7 +67,12 @@ mark.grade = 90
 show_details(mark)
 
 #PART 3 INHERITANCE
+#Defining 3 subclasses each of a different animal
+# all with a main animal class
 
+
+#This is thhe main animal class. It really only servers to inheirit the speak and move functions 
+#So that they can be overwritten by the subclasses
 class Animal:
     def __init__(self):
         return self.__class__.__name__
@@ -76,6 +81,7 @@ class Animal:
     def move(self):
         pass
 
+#Simple Dog class
 class Dog(Animal):
     def __init__(self):
         super().__init__()
@@ -84,6 +90,7 @@ class Dog(Animal):
     def move(self):
         return f"Dog runs away"
 
+#3cat class
 class Cat(Animal):
     def __init__(self,):
         super().__init__()
@@ -92,6 +99,7 @@ class Cat(Animal):
     def move(self):
         return f"Cat scitters away"
 
+#Bird class
 class Bird(Animal):
     def __init__(self):
         super().__init__()
@@ -100,16 +108,20 @@ class Bird(Animal):
     def move(self):
         return f"Bird flys away"
     
+
+#Assign variable to be one of each of the 3 subclasses
 mybird = Bird
 mydog = Dog
 mycat = Cat
 
+#Define a function to print what the speak and move function return
 def speaking(Animal):
     print(Animal.speak(Animal))
 
 def moving(Animal):
     print(Animal.move(Animal))
 
+#Examples of what they all now say
 speaking(mydog)
 speaking(mycat)
 speaking(mybird)
