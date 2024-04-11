@@ -160,9 +160,9 @@ mycar = Car
 myplane = Plane
 mybike = Bike
 
-def journey(Vehicle):
+def travel(Vehicle):
     print(Vehicle.traveling(Vehicle))
 
-journey(mycar)
-journey(myplane)
-journey(mybike)
+travel(mycar)
+travel(myplane)
+travel(mybike)
