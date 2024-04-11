@@ -69,7 +69,7 @@ if __name__ == "__main__":
 """
 Notes
 
-I got it work after 2 months.
-The reaon why the prgram didn't work was because there were too many variables giiven to the attack and take_damage functions
-As well as the attack function itself using the weapons.shoot function that also had an extra variable given that wasn't needed
+I got it working after 2 months.
+The reason why the program didn't work was because there were too many variables given to the attack and take_damage functions
+As well as the attack function itself was using the weapons.shoot function that also had an extra variable given that wasn't needed
 """
